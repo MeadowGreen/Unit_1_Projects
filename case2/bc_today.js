@@ -1,4 +1,4 @@
-
+"use strict";
 /*
    New Perspectives on HTML5 and CSS3, 7th Edition
    Tutorial 9
@@ -13,7 +13,7 @@
    student union.
 
 */
-
+getEvent(thisDay);
 
 
 function getEvent(day) {
@@ -174,3 +174,13 @@ function getEvent(day) {
    
    return eventHTML
 }
+//created new date
+var thisDate = new Date();
+var dateString = thisDate.toLocaleDateString();
+var dateHTML = "<h2>" + dateString + "</h2>";
+var thisDay= thisDate.getDay();
+//called the getEvent function
+var eventHTML = getEvent(thisDay);
+
+document.getElementById("unionToday").insertAdjacentHTML("beforeEnd", dateHTML);
+document.getElementById("unionToday").insertAdjacentHTML("beforeEnd", eventHTML);

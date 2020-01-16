@@ -4,8 +4,8 @@
    Case Problem 1
 
    Planisphere Script
-   Author: 
-   Date:   
+   Author: Meadow Green
+   Date:   1-16-20
 
 */
 
