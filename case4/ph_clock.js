@@ -1,3 +1,4 @@
+"use strict";
 /*
    New Perspectives on HTML5 and CSS3, 7th Edition
    Tutorial 9
@@ -10,9 +11,28 @@
    Filename:   ph_clock.js     
 
 */
+addLeadingZero(secsLeft);
+checkTimer();
+var minsLeft = 0;
+var secsLeft = 15;
+var timeLeft = minsLeft*60+secsLeft;
+setInterval("countdown()", 1000);
+var clockID = countdown();
+var secsString = addLeadingZero(secsLeft);
+document.getElementById(minutes).textContent = minsString;
+document.getElementById(seconds).textContent = secsString;
 
+//g
 
-
+function countdown(){
+    minsLeft = Math.floor(timeLeft/ 60);
+    secsLeft =timeLeft-60 * minsLeft;
+    var minsString = addLeadingZero(minsLeft); 
+}
+function stopClock(){
+    document.getElementById("TimeHead").insertAdjacentHTML(beforeend, <br />(Order Expired));
+}
+clearInterval("clockID");
 
 
 

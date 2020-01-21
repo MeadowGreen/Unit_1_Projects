@@ -13,9 +13,19 @@
    quotation tag in the Web page.
 
 */
+//call the function to create random number
+randomInt(0, 9);
+//function to pick a random number from 0-9
 function randomInt(lowest, size){
-    
+   var randomQ = Math.floor(Math.random()*size+lowest);
+   return randomQ;
 }
+var randomQ = randomInt(0,9);
+var quoteElem = document.getElementsByTagName("quote")[0];
+//call function to choose the random number for a quote
+getQuote(randomQ);
+//Puts the quote onto the page
+quoteElem.innerHTML = getQuote(randomQ);
 
 function getQuote(n) {
    var quotes = [
