@@ -13,26 +13,29 @@
 */
 addLeadingZero(secsLeft);
 checkTimer();
-var minsLeft = 0;
-var secsLeft = 15;
-var timeLeft = minsLeft*60+secsLeft;
-setInterval("countdown()", 1000);
-var clockID = countdown();
-var secsString = addLeadingZero(secsLeft);
-document.getElementById(minutes).textContent = minsString;
-document.getElementById(seconds).textContent = secsString;
+var minsLeft = 30;
+var secsLeft = 0;
+var timeLeft = (minsLeft*60)+(secsLeft);
+var clockID = setInterval("countdown()", 1);
 
-//g
 
 function countdown(){
-    minsLeft = Math.floor(timeLeft/ 60);
-    secsLeft =timeLeft-60 * minsLeft;
-    var minsString = addLeadingZero(minsLeft); 
+    var minsLeft = Math.floor(timeLeft/ 60);
+    var secsLeft =timeLeft - minsLeft*60;
+    var minsString = addLeadingZero(minsLeft);
+    var secsString = addLeadingZero(secsLeft);
+    document.getElementById("minutes").textContent = minsString;
+   document.getElementById("seconds").textContent = secsString;
+    checkTimer();
+    timeLeft--;
+   
 }
 function stopClock(){
-    document.getElementById("TimeHead").insertAdjacentHTML(beforeend, <br />(Order Expired));
+    document.getElementById("TimeHead").insertAdjacentHTML('beforeEnd', '<br / > Order Expired');
+    clearInterval(clockID);
 }
-clearInterval("clockID");
+
+//
 
 
 
